@@ -1,0 +1,18 @@
+<h1>Mis proyectos</h1>
+
+@if (proyectos.length > 0) {
+    <section class="proyectos-lista">
+        @for (proyecto of proyectos; track proyecto._id) {
+        <article class="proyecto-card">
+            <h2>{{ proyecto.nombre }}</h2>
+            <p>{{ proyecto.descripcion }}</p>
+            <img [src]="proyecto.imagen" alt="Imagen de {{ proyecto.nombre }}" width="300" />
+            <p><strong>Tecnologías:</strong> {{ proyecto.tecnologias.join(', ') }}</p>
+            <a [href]="proyecto.url" target="_blank">Ver proyecto</a>
+        </article>
+        }
+    </section>
+    } @else {
+    <p>No hay proyectos disponibles por ahora.</p>
+}
+
