@@ -74,6 +74,8 @@ h2{
 h4{
     text-align: center;
     color: rgb(0, 57, 133);
+    font-size: 24px;
+    margin: 20px;
 }
 
 .fecha{
@@ -102,6 +104,36 @@ button {
 .info_texto {
     text-align: center;
     margin-bottom: 20px;
+}
+
+
+@media(min-width: 768px ) {
+    .proyecto_contenido {
+        display: flex;
+    }
+    .descripcion {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 500px;
+    min-height: 150px;
+    margin: 50px;
+    }
+    .info_imagen{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+    .proyecto_imagen{
+        h4{
+            text-align: end;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column: 2/3;
+        }
+    }
 }
 
 

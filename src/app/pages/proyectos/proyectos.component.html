@@ -9,7 +9,7 @@
     <section>
         @for (proyecto of proyectos; track proyecto._id) {
         <article class="proyecto">
-
+            <div class="proyecto_contenido">
                 <figure class="proyecto_imagen">
                     <figcaption>
                         <h2>{{ proyecto.nombre.toUpperCase() }}</h2>
@@ -25,9 +25,13 @@
                             <a [href]="proyecto.url" target="_blank">Ver proyecto</a>
                         </button>
                     </div>
+                </section>
+            </div>
+
+                <section class="proyecto_imagen">
+                    <h4>¿Cuándo?</h4>
                     <div class="info_imagen">
                         <img [src]="proyecto.imagenDesktop" alt="Imagen de {{ proyecto.nombre }}" width="500" />
-                        <h4>¿Cuándo?</h4>
                         <p class="fecha">{{ proyecto.fechaInicio | date: "dd/MM/YYYY"  }} - {{ proyecto.fechaFin | date: "dd/MM/YYYY" }}</p>
                     </div>
                 </section>
