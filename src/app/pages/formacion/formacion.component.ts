@@ -1,0 +1,24 @@
+import { Component } from '@angular/core';
+import { Formacion } from '../../interfaces/formacion.interface';
+import { FormacionService } from '../../services/formacion.service';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-formacion',
+  imports: [RouterLink],
+  templateUrl: './formacion.component.html',
+  styleUrl: './formacion.component.css'
+})
+export class FormacionComponent {
+
+  formaciones: Formacion[] = [];
+
+  constructor(private formacionService: FormacionService) {}
+
+  ngOnInit() {
+    this.formacionService.getFormacion().subscribe((data: Formacion[]) => {
+      this.formaciones = data;
+    });
+  }
+
+}

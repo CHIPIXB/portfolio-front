@@ -1,0 +1,18 @@
+<section>
+    <h2>Formación</h2>
+
+    @if (formaciones.length > 0) {
+        @for (formacion of formaciones; track formacion._id) {
+        <article class="mb-4">
+            <h3>{{ formacion.titulo }}</h3>
+            <p><strong>Escuela:</strong> {{ formacion.escuela }}</p>
+            <p><strong>Fechas:</strong> {{ formacion.fechaInicio }} – {{ formacion.fechaFin }}</p>
+            <p>{{ formacion.descripcion }}</p>
+        </article>
+        }
+    } @else {
+        <p>No hay formaciones disponibles.</p>
+    }
+</section>
+
+<a routerLink="/home">Volver a inicio</a>
