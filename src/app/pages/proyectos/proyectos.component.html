@@ -6,18 +6,54 @@
     } @else if (proyectos.length === 0) {
         <p>No hay proyectos disponibles por ahora.</p>
     } @else if (proyectos.length > 0) {
-    <section class="proyectos-lista">
+    <section>
         @for (proyecto of proyectos; track proyecto._id) {
-        <article class="proyecto-card">
-            <h2>{{ proyecto.nombre }}</h2>
-            <p>{{ proyecto.descripcion }}</p>
-            <img [src]="proyecto.imagen" alt="Imagen de {{ proyecto.nombre }}" width="300" />
-            <p><strong>Tecnologías:</strong> {{ proyecto.tecnologias.join(', ') }}</p>
-            <a [href]="proyecto.url" target="_blank">Ver proyecto</a>
+        <article class="proyecto">
+
+                <figure class="proyecto_imagen">
+                    <figcaption>
+                        <h2>{{ proyecto.nombre.toUpperCase() }}</h2>
+                    </figcaption>
+                    <img [src]="proyecto.imagenResponsive" alt="Imagen de {{ proyecto.nombre }}" />
+                </figure>
+
+                <section class="proyecto_info">
+                    <div class="info_texto">
+                        <h4>¿Qué es?</h4>
+                        <p class="descripcion">{{ proyecto.descripcion }}</p>
+                        <button>
+                            <a [href]="proyecto.url" target="_blank">Ver proyecto</a>
+                        </button>
+                    </div>
+                    <div class="info_imagen">
+                        <img [src]="proyecto.imagenDesktop" alt="Imagen de {{ proyecto.nombre }}" width="500" />
+                        <h4>¿Cuándo?</h4>
+                        <p class="fecha">{{ proyecto.fechaInicio | date: "dd/MM/YYYY"  }} - {{ proyecto.fechaFin | date: "dd/MM/YYYY" }}</p>
+                    </div>
+                </section>
+
+                <section class="proyecto_enlace">
+                        <h4>¿Con qué tecnologías?</h4>
+                        <div class="iconos">
+                        @for (tech of proyecto.tecnologias; track tech) {
+                            <img 
+                            [src]="iconosTecnologia[tech]" 
+                            [alt]="tech" 
+                            title="{{ tech }}" 
+                            width="50" 
+                            height="50" 
+                            class="me-2"
+                            />
+                        }
+                        </div>
+                </section>
+                
         </article>
         }
     </section>
 }
 
-<a routerLink="/home">Volver a inicio</a>
+<button>
+    <a routerLink="/home">Volver a inicio</a>
+</button>
 
