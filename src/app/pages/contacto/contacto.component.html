@@ -1,0 +1,16 @@
+
+
+<h2>Contacto</h2>
+
+@if (datosContacto) {
+    <ul>
+        <li><strong>Nombre:</strong> {{ datosContacto.nombre }}</li>
+        <li><strong>Email:</strong> {{ datosContacto.email }}</li>
+        <li><strong>Teléfono:</strong> {{ datosContacto.telefono }}</li>
+        <li><strong>LinkedIn:</strong> {{ datosContacto.linkedin }}</li>
+        <li><strong>GitHub:</strong> {{ datosContacto.github }}</li>
+        <li><strong>Ubicación:</strong> {{ datosContacto.ubicacion }}</li>
+    </ul>
+    } @else {
+    <p>Cargando...</p>
+}
