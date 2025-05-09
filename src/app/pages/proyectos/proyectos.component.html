@@ -1,6 +1,11 @@
 <h1>Mis proyectos</h1>
 
-@if (proyectos.length > 0) {
+@if (cargando) {
+        <p>Cargando datos del servidor...</p>
+        <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
+    } @else if (proyectos.length === 0) {
+        <p>No hay proyectos disponibles por ahora.</p>
+    } @else if (proyectos.length > 0) {
     <section class="proyectos-lista">
         @for (proyecto of proyectos; track proyecto._id) {
         <article class="proyecto-card">
@@ -12,8 +17,6 @@
         </article>
         }
     </section>
-    } @else {
-    <p>No hay proyectos disponibles por ahora.</p>
 }
 
 <a routerLink="/home">Volver a inicio</a>

@@ -10,6 +10,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './proyectos.component.css'
 })
 export class ProyectosComponent {
+  
+  cargando = true
 
   proyectos: Proyecto[] = []
 
@@ -18,6 +20,7 @@ export class ProyectosComponent {
   ngOnInit() {
     this.proyectosService.getProyectos().subscribe((data: Proyecto[]) => {
       this.proyectos = data;
+      this.cargando = false;
     });
   }
   

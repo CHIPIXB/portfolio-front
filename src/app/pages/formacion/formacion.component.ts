@@ -11,6 +11,8 @@ import { RouterLink } from '@angular/router';
 })
 export class FormacionComponent {
 
+  cargando = true
+
   formaciones: Formacion[] = [];
 
   constructor(private formacionService: FormacionService) {}
@@ -18,6 +20,7 @@ export class FormacionComponent {
   ngOnInit() {
     this.formacionService.getFormacion().subscribe((data: Formacion[]) => {
       this.formaciones = data;
+      this.cargando = false;
     });
   }
 

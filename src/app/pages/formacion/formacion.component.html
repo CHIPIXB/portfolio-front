@@ -1,7 +1,13 @@
 <section>
     <h2>Formación</h2>
 
-    @if (formaciones.length > 0) {
+    
+    @if (cargando) {
+        <p>Cargando datos del servidor...</p>
+        <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
+    } @else if (formaciones.length === 0) {
+        <p>No hay formaciones disponibles por ahora.</p>
+    } @else {
         @for (formacion of formaciones; track formacion._id) {
         <article class="mb-4">
             <h3>{{ formacion.titulo }}</h3>
@@ -10,8 +16,6 @@
             <p>{{ formacion.descripcion }}</p>
         </article>
         }
-    } @else {
-        <p>No hay formaciones disponibles.</p>
     }
 </section>
 

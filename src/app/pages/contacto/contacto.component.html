@@ -1,8 +1,9 @@
-
-
 <h2>Contacto</h2>
 
-@if (datosContacto) {
+@if (cargando) {
+    <p>Cargando datos del servidor...</p>
+    <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
+} @else {
     <ul>
         <li><strong>Nombre:</strong> {{ datosContacto.nombre }}</li>
         <li><strong>Email:</strong> {{ datosContacto.email }}</li>
@@ -11,6 +12,7 @@
         <li><strong>GitHub:</strong> {{ datosContacto.github }}</li>
         <li><strong>Ubicación:</strong> {{ datosContacto.ubicacion }}</li>
     </ul>
-    } @else {
-    <p>Cargando...</p>
 }
+
+<a routerLink="/home">Volver a inicio</a>
+

@@ -1,18 +1,22 @@
 <h1>Experiencia laboral</h1>
 
-@if (experiencia.length > 0) {
-    <section class="experiencia-lista">
-    @for (item of experiencia; track item._id) {
+
+@if (cargando) {
+    <p>Cargando datos del servidor...</p>
+    <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
+    } @else if (experiencia.length === 0) {
+    <p>No hay experiencia laboral por ahora.</p>
+    } @else {
+    <section class="exp-list">
+        @for (item of experiencia; track item._id) {
         <article class="exp-card">
         <h2>{{ item.puesto }} en {{ item.empresa }}</h2>
         <p>{{ item.descripcion }}</p>
         <p><strong>Fechas:</strong> {{ item.fechaInicio | date }} - {{ item.fechaFin | date }}</p>
         </article>
-    }
+        }
     </section>
-} @else {
-    <p>No hay experiencia laboral por ahora.</p>
-}
+}   
 
 <a routerLink="/home">Volver a inicio</a>
 

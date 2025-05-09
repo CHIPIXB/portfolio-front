@@ -12,6 +12,8 @@ import { RouterLink } from '@angular/router';
 })
 export class ExperienciaComponent {
 
+  cargando = true
+
   experiencia: Experiencia[] = []
 
   constructor(private experienciaService: ExperienciaService) {}
@@ -19,6 +21,7 @@ export class ExperienciaComponent {
   ngOnInit() {
     this.experienciaService.getExperiencia().subscribe((data: Experiencia[]) => {
       this.experiencia = data;
+      this.cargando = false;
     });
   }
 
