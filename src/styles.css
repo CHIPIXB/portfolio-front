@@ -53,8 +53,9 @@ table {
     box-sizing: border-box;
 }
 
-html {
-    /* background-image: url(./images/background.png); */
+
+
+/* html {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -64,20 +65,14 @@ img{
     width: 100%;
     height: auto;
     display: block;
-}
+} */
 
 
 /* .comic-relief-regular {
-  font-family: "Comic Relief", system-ui;
-  font-weight: 400;
+  font-family: "Comic Relief", system-ui; letra como a mano
+  font-weight: 400; 700;
   font-style: normal;
 }
-
-.comic-relief-bold {
-  font-family: "Comic Relief", system-ui;
-  font-weight: 700;
-  font-style: normal;
-} */
 
 
 /* .roboto-condensed-<uniquifier> {
@@ -95,10 +90,23 @@ img{
 } */
 
 
-:root {
+/* :root {
 
     --verde-fluor: rgb(0, 255, 221);
     --verde-fluor-fondo: rgba(0, 255, 221, 0.384);
     --rosa-fluor: rgb(170, 43, 187);
     --rosa-fluor-fondo: rgba(170, 43, 187, 0.425);
+} */
+
+:root {
+  --verde-oscuro: #3d524e;       /* para títulos importantes o botones */
+  --verde-medio: #6b8f7e;        /* intermedio entre el suave y el oscuro */
+  --verde-musgo: #4e6a61;        /* más terroso, ideal para fondos suaves */
+  --beige: #eae6da;              /* fondo cálido que combina con todo */
+  --arena: #d7cbb2;              /* alternativa al beige para secciones */
+  --marron-suave: #8a7968;       /* texto secundario, botones muted */
+  --ocre: #bfa980;               /* detalles llamativos sin ser chillones */
+  --naranja-terroso: #d98950;    /* para destacar con calidez */
+  --azul-pizarra: #627d83;       /* contraste suave con el verde */
+  --verde-negruzco: #273732;     /* casi negro, ideal para textos importantes */
 }
