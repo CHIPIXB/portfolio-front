@@ -1,75 +1,58 @@
-<header>
-    <h1>Mis proyectos</h1>
-</header>
-<main>
 
-    <div class="intro container-lg">
-        <p>En esta sección encontrarás una selección de proyectos destacados que he desarrollado. Cada uno de ellos refleja mi experiencia, habilidades y pasión. Explora los detalles, tecnologías utilizadas y fechas de realización. ¡Espero que los disfrutes tanto como yo disfruté creándolos!</p>
+<section id="proyectos" class="proyectos">
+    <h2 class="titulo-seccion">Mis proyectos</h2>
+    <p class="intro-proyectos">
+        Aquí puedes ver algunos de los proyectos que he desarrollado como desarrolladora full stack. Cada uno refleja mi evolución, lo que he aprendido y cómo afronto los retos de construir ideas desde cero. ¡Cada proyecto es una pieza más en este puzzle creativo!
+    </p>
+    <p class="go-back">
+        <a routerLink="/home">
+            <i class="fa-solid fa-reply-all"></i>
+        </a>
+    </p>
+
+        <div class="icons">
+        <a href="https://www.instagram.com/chipixvi/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/laura-moreno-chipi/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/CHIPIXB" target="_blank">
+            <i class="fa-brands fa-github"></i>
+        </a>
     </div>
+    <div class="grid-proyectos">
+        @for (proyecto of proyectos; track proyecto._id) {
+            <article class="pieza-puzzle-proyecto">
+                <img src="{{ proyecto.imagenDesktop }}" alt="Vista del proyecto" class="img-proyecto" />
+            <div class="contenido">
+                <h3>{{ proyecto.nombre }}</h3>
+                <p>{{ proyecto.descripcion }}</p>
 
-    @if (cargando) {
-        <p>Cargando datos del servidor...</p>
-        <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
-    } @else if (proyectos.length === 0) {
-        <p>No hay proyectos disponibles por ahora.</p>
-    } @else if (proyectos.length > 0) {
-        <section>
-            @for (proyecto of proyectos; track proyecto._id) {
-                <article class="proyecto container-xl" [class.reverse]="$odd">
-                    <div class="proyecto_contenido">
-                        <figure class="proyecto_imagen">
-                            <figcaption>
-                                <h2>{{ proyecto.nombre.toUpperCase() }}</h2>
-                            </figcaption>
-                            <img [src]="proyecto.imagenResponsive" alt="Imagen de {{ proyecto.nombre }}" />
-                        </figure>
-                        
-                        <section class="proyecto_info">
-                            <div class="info_texto">
-                                <h4>¿Qué es?</h4>
-                                <p class="descripcion">{{ proyecto.descripcion }}</p>
-                                <div class="button">
-                                    <button>
-                                    <a [href]="proyecto.url" target="_blank">Ver proyecto</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    
-                    <div class="proyecto_contenido2">
-                        <section class="proyecto_imagen">
-                            <h4>¿Cuándo?</h4>
-                            <div class="info_imagen">
-                                <p class="fecha">{{ proyecto.fechaInicio | date: "dd/MM/YYYY"  }} - {{ proyecto.fechaFin | date: "dd/MM/YYYY" }}</p>
-                                <img [src]="proyecto.imagenDesktop" alt="Imagen de {{ proyecto.nombre }}" width="500" />
-                            </div>
-                        </section>
-                        
-                        <section class="proyecto_enlace">
-                            <h4>Tecnologías usadas</h4>
-                            <div class="iconos">
-                                @for (tech of proyecto.tecnologias; track tech) {
-                            <img 
-                            [src]="iconosTecnologia[tech]" 
-                            [alt]="tech" 
-                            title="{{ tech }}" 
-                            width="50" 
-                            height="50" 
-                            class="me-2"
-                            />
-                                }
-                            </div>
-                        </section>
+                <div class="tecnologias">
+                @for (tech of proyecto.tecnologias; track tech) {
+                    <img 
+                    [src]="iconosTecnologia[tech]" 
+                    [alt]="tech" 
+                    title="{{ tech }}" 
+                    width="50" 
+                    height="50" 
+                    class="me-2"
+                    />
+                }
+                </div>
+
+                <a href="{{ proyecto.url }}" target="_blank" class="boton">Ver en GitHub</a>
+                <p class="fechas">{{ proyecto.fechaInicio | date: "dd/MM/yyyy" }} – {{ proyecto.fechaFin | date: "dd/MM/yyyy" }}</p>
             </div>
-            
-        </article>
-    }
+            </article>
+        }
+    </div>
 </section>
-}
-<button>
-    <a routerLink="/home">Volver a inicio</a>
-</button>
-</main>
 
+<div class="arrow">
+    <a href="proyectos" class="boton-subir">
+        <i class="fa-regular fa-hand-pointer"></i>
+    </a>
+</div>
 

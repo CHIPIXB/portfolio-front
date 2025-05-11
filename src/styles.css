@@ -90,17 +90,16 @@ img{
 } */
 
 
-/* :root {
 
-    --verde-fluor: rgb(0, 255, 221);
-    --verde-fluor-fondo: rgba(0, 255, 221, 0.384);
-    --rosa-fluor: rgb(170, 43, 187);
-    --rosa-fluor-fondo: rgba(170, 43, 187, 0.425);
-} */
+body {
+    background-image: url(./images/fondo-home.png);
+    background-size: contain;
+}
 
 :root {
+  --verde-claro:  #a5c8a334; /* fondo suave, ideal para secciones */
   --verde-oscuro: #3d524e;       /* para títulos importantes o botones */
-  --verde-medio: #6b8f7e;        /* intermedio entre el suave y el oscuro */
+  --verde-medio: #6b8f7ec0;        /* intermedio entre el suave y el oscuro */
   --verde-musgo: #4e6a61;        /* más terroso, ideal para fondos suaves */
   --beige: #eae6da;              /* fondo cálido que combina con todo */
   --arena: #d7cbb2;              /* alternativa al beige para secciones */

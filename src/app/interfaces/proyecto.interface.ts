@@ -6,6 +6,5 @@ export interface Proyecto {
     fechaFin: string;
     tecnologias: string[];
     imagenDesktop: string;
-    imagenResponsive: string;
     url: string;
 }
