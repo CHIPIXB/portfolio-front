@@ -60,6 +60,13 @@ html {
     background-attachment: fixed;
 }
 
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
 /* .comic-relief-regular {
   font-family: "Comic Relief", system-ui;
   font-weight: 400;
