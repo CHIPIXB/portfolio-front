@@ -1,22 +1,55 @@
-<h1>Experiencia laboral</h1>
 
+<section id="experiencia" class="experiencia">
+    <h2 class="titulo-seccion">Mi experiencia laboral</h2>
+    <p class="intro-experiencia">
+        Cada trabajo que he realizado ha sido una oportunidad para aprender, crecer y descubrir nuevas habilidades. Aunque mi camino en el <span>desarrollo</span> acaba de empezar, mi experiencia previa ha sido clave para construir la profesional que soy hoy.
+    </p>
 
-@if (cargando) {
-    <p>Cargando datos del servidor...</p>
-    <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
+    <p class="go-back">
+        <a routerLink="/home">
+        <i class="fa-solid fa-reply-all"></i>
+        </a>
+    </p>
+
+    <div class="icons">
+        <a href="https://www.instagram.com/chipixvi/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/laura-moreno-chipi/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/CHIPIXB" target="_blank">
+        <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+
+<div class="grid-experiencia">
+    @if (cargando) {
+        <p>Cargando datos del servidor...</p>
+        <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpa las molestias.</p>
     } @else if (experiencia.length === 0) {
-    <p>No hay experiencia laboral por ahora.</p>
+        <p>No hay experiencia laboral por ahora.</p>
     } @else {
-    <section class="exp-list">
         @for (item of experiencia; track item._id) {
-        <article class="exp-card">
-        <h2>{{ item.puesto }} en {{ item.empresa }}</h2>
-        <p>{{ item.descripcion }}</p>
-        <p><strong>Fechas:</strong> {{ item.fechaInicio | date }} - {{ item.fechaFin | date }}</p>
-        </article>
+            <article class="pieza-experiencia">
+            <div class="contenido">
+                <h3>{{ item.puesto }}</h3>
+                <p class="empresa-fecha">
+                {{ item.empresa }} <br />
+                {{ item.fechaInicio | date: "MM/yyyy" }} – {{ item.fechaFin ? (item.fechaFin | date: "MM/yyyy") : 'Actualidad' }}
+                </p>
+                <p>{{ item.descripcion }}</p>
+            </div>
+            </article>
         }
-    </section>
-}   
 
-<a routerLink="/home">Volver a inicio</a>
+    }
+    
+</div>
+</section>
 
+<div class="arrow">
+    <a href="experiencia" class="boton-subir">
+        <i class="fa-regular fa-hand-pointer"></i>
+    </a>
+</div>

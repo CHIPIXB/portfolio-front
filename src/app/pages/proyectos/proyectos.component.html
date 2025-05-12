@@ -22,12 +22,20 @@
         </a>
     </div>
     <div class="grid-proyectos">
+        @if (cargando) {
+        <p>Cargando datos del servidor...</p>
+        <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpa las molestias.</p>
+    } @else if (proyectos.length === 0) {
+        <p>No hay proyectos por ahora.</p>
+    } @else {
         @for (proyecto of proyectos; track proyecto._id) {
             <article class="pieza-puzzle-proyecto">
-                <img src="{{ proyecto.imagenDesktop }}" alt="Vista del proyecto" class="img-proyecto" />
-            <div class="contenido">
-                <h3>{{ proyecto.nombre }}</h3>
-                <p>{{ proyecto.descripcion }}</p>
+                <div class="img-proyecto">
+                    <img src="{{ proyecto.imagenDesktop }}" alt="Vista del proyecto" />
+                </div>
+                <div class="contenido">
+                    <h3>{{ proyecto.nombre }}</h3>
+                    <p>{{ proyecto.descripcion }}</p>
 
                 <div class="tecnologias">
                 @for (tech of proyecto.tecnologias; track tech) {
@@ -47,6 +55,7 @@
             </div>
             </article>
         }
+    }
     </div>
 </section>
 

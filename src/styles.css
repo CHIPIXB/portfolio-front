@@ -65,7 +65,7 @@ img{
     width: 100%;
     height: auto;
     display: block;
-} */
+} 
 
 
 /* .comic-relief-regular {
@@ -94,6 +94,9 @@ img{
 body {
     background-image: url(./images/fondo-home.png);
     background-size: contain;
+    /* background-repeat: no-repeat; */
+    /* width: 100vw;
+    height: 100vh; */
 }
 
 :root {
