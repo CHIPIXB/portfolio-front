@@ -7,14 +7,15 @@ main {
   font-family: "Comic Relief", system-ui;
 }
 
-.intro {
+.intro  {
   background-color: #a5c8a334;
   border: 2px solid var(--bordes);
   border-radius: 10px;
   backdrop-filter: blur(10px);
+  padding: 50px;
 
   width: 900px;
-  height: 50vh;
+  height: auto;
   align-items: center;
   align-content: center;
 }
@@ -38,7 +39,7 @@ span {
 
 .puzzle-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 4rem;
 }
@@ -76,3 +77,65 @@ i {
   margin: 0 10px;
   color: var(--verde-medio);
 }
+
+
+@media (max-width: 1024px) {
+
+  .puzzle-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .intro {
+    padding: 50px;
+    height: auto;
+  }
+
+  .puzzle a {
+    transform: translate(-10%, -10%);
+  }
+}
+
+@media (max-width: 990px) {
+  .puzzle a {
+    transform: translate(-0%, -10%);
+  }
+}
+
+@media (max-width: 768px) {
+  .puzzle-grid {
+    gap: 0;
+    margin-top: 2rem;
+  }
+    .puzzle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+      .puzzle a {
+    transform: translate(0, -10%);
+  }
+}
+
+@media (max-width: 575px) {
+
+  .intro {
+    width: 100%;
+  }
+
+  .puzzle-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .puzzle {
+    background-position: center;
+  }
+
+  .icons {
+    padding: 20px;
+    text-align: center;
+  }
+
+
+}
+
+
