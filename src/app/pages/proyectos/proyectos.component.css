@@ -27,7 +27,6 @@ text-align: center;
 
 .pieza-puzzle-proyecto {
     display: flex;
-    /* flex-direction: row; */
     gap: 2rem;
     border-radius: 1.5rem;
     padding: 2rem;

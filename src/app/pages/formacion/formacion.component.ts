@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Formacion } from '../../interfaces/formacion.interface';
 import { FormacionService } from '../../services/formacion.service';
 import { RouterLink } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-formacion',
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
   templateUrl: './formacion.component.html',
   styleUrl: './formacion.component.css'
 })

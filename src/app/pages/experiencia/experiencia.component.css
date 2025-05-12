@@ -16,9 +16,11 @@
     font-size: 2.8rem;
     font-weight: 700;
     color: var(--verde-oscuro);
-    margin: 1.5rem;
+    margin: 6rem 0 2rem 0;
     text-align: center;
 }
+
+
 
 .intro-experiencia {
 font-family: "Comic Relief", system-ui;

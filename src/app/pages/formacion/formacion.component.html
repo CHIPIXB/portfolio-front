@@ -1,22 +1,49 @@
-<section>
-    <h2>Formación</h2>
 
-    
-    @if (cargando) {
+<section id="formacion" class="formacion">
+    <h2 class="titulo-seccion">Mi formación</h2>
+    <p class="intro-formacion">
+        Aquí puedes ver mi formación académica y los cursos que he realizado en el ámbito del desarrollo. Han sido una oportunidad para aprender, crecer y descubrir nuevas habilidades. Aunque mi camino en el <span>desarrollo</span> acaba de empezar, me he dado cuenta de que la formación no termina nunca. Siempre hay algo nuevo que aprender y nuevas habilidades que adquirir. Esto es solo el principio.
+    </p>
+    <p class="go-back">
+        <a routerLink="/home">
+            <i class="fa-solid fa-reply-all"></i>
+        </a>
+    </p>
+
+        <div class="icons">
+        <a href="https://www.instagram.com/chipixvi/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/laura-moreno-chipi/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/CHIPIXB" target="_blank">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+    <div class="grid-formacion">
+        @if (cargando) {
         <p>Cargando datos del servidor...</p>
-        <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
+        <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpa las molestias.</p>
     } @else if (formaciones.length === 0) {
-        <p>No hay formaciones disponibles por ahora.</p>
+        <p>No hay proyectos por ahora.</p>
     } @else {
-        @for (formacion of formaciones; track formacion._id) {
-        <article class="mb-4">
-            <h3>{{ formacion.titulo }}</h3>
-            <p><strong>Escuela:</strong> {{ formacion.escuela }}</p>
-            <p><strong>Fechas:</strong> {{ formacion.fechaInicio }} – {{ formacion.fechaFin }}</p>
-            <p>{{ formacion.descripcion }}</p>
-        </article>
+        @for (proyecto of formaciones; track proyecto._id) {
+            <article class="pieza-formacion">
+                <div class="contenido">
+                    <h3>{{ proyecto.titulo }}</h3>
+                    <p>{{ proyecto.descripcion }}</p>
+                <p class="fechas">{{ proyecto.fechaInicio | date: "dd/MM/yyyy" }} – {{ proyecto.fechaFin | date: "dd/MM/yyyy" }}</p>
+            </div>
+            </article>
         }
     }
+    </div>
 </section>
 
-<a routerLink="/home">Volver a inicio</a>
+<div class="arrow">
+    <a href="formacion" class="boton-subir">
+        <i class="fa-regular fa-hand-pointer"></i>
+    </a>
+</div>
+

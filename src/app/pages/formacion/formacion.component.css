@@ -1,0 +1,123 @@
+.titulo-seccion {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin: 1.5rem;
+    text-align: center;
+}
+
+
+.intro-formacion {
+font-family: "Comic Relief", system-ui;
+font-size: 1.2rem;
+color: var(--texto);
+max-width: 700px;
+margin: 0 auto 3rem auto;
+line-height: 1.6;
+text-align: center;
+}
+
+.grid-formacion {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+
+.pieza-formacion {
+    display: flex;
+    /* flex-direction: row; */
+    gap: 2rem;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 950px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--verde-medio);
+}
+
+.pieza-puzzle-formacion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.pieza-formacion .contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pieza-formacion h3 {
+    color: var(--marron-suave);
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.pieza-formacion p {
+    color: var(--verde-negruzco);
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-family: "Comic Relief", system-ui;
+}
+
+
+
+.fechas {
+    font-size: 0.9rem;
+    color: var(--marron-suave);
+    margin-top: 0.5rem;
+}
+
+.go-back {
+    text-align: center; 
+}
+
+        
+
+i {
+    font-size: 200%;
+    margin: 0 10px;
+    color: var(--verde-medio);
+}
+
+.arrow{
+    width: 100%;
+    text-align: end;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    i{
+        margin:10px 50px;
+        font-size: 50px;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+.pieza-formacion {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.img-formacion {
+    width: 100%;
+    max-width: 100%;
+    }
+
+.pieza-formacion .contenido {
+    text-align: center;
+    align-items: center;
+}
+
+}
+
