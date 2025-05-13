@@ -1,18 +1,42 @@
-<h2>Contacto</h2>
+<section id="contacto" class="contacto">
+    <h2 class="titulo-seccion">Contacto</h2>
+    <p class="intro-contacto">
+        Aquí tienes mi contacto. Si quieres saber más sobre mí, no dudes en escribirme. Estoy abierta a nuevas oportunidades y colaboraciones. ¡Espero saber de ti pronto!
+    </p>
+    <p class="go-back">
+        <a routerLink="/home">
+            <i class="fa-solid fa-reply-all"></i>
+        </a>
+    </p>
 
-@if (cargando) {
-    <p>Cargando datos del servidor...</p>
-    <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
-} @else {
-    <ul>
-        <li><strong>Nombre:</strong> {{ datosContacto.nombre }}</li>
-        <li><strong>Email:</strong> {{ datosContacto.email }}</li>
-        <li><strong>Teléfono:</strong> {{ datosContacto.telefono }}</li>
-        <li><strong>LinkedIn:</strong> {{ datosContacto.linkedin }}</li>
-        <li><strong>GitHub:</strong> {{ datosContacto.github }}</li>
-        <li><strong>Ubicación:</strong> {{ datosContacto.ubicacion }}</li>
-    </ul>
-}
+        <div class="icons">
+        <a href="https://www.instagram.com/chipixvi/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/laura-moreno-chipi/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/CHIPIXB" target="_blank">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+    <div class="grid-contacto">
+    @if (cargando) {
+        <p>Cargando datos del servidor...</p>
+        <p>Si tarda más de unos segundos, prueba a recargar la página o ponte en contacto con nosotros. Disculpe las molestias.</p>
+    } @else {
+        <section class="lista-contacto">
+            <ul>
+                <li><strong>Nombre:</strong> {{ datosContacto.nombre }}</li>
+                <li><strong>Email:</strong> {{ datosContacto.email }}</li>
+                <li><strong>Teléfono:</strong> {{ datosContacto.telefono }}</li>
+                <li><strong>LinkedIn:</strong> {{ datosContacto.linkedin }}</li>
+                <li><strong>GitHub:</strong> {{ datosContacto.github }}</li>
+                <li><strong>Ubicación:</strong> {{ datosContacto.ubicacion }}</li>
+            </ul>
+        </section>
+    }
+    </div>
+</section>
 
-<a routerLink="/home">Volver a inicio</a>
 

@@ -3,7 +3,7 @@
     font-size: 2.8rem;
     font-weight: 700;
     color: var(--verde-oscuro);
-    margin: 1.5rem;
+    margin: 6rem 0 2rem 0;
     text-align: center;
 }
 
@@ -22,6 +22,7 @@ text-align: center;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+    padding: 50px;
 }
 
 
@@ -56,10 +57,7 @@ text-align: center;
     border-radius: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
-}
 
-
-/* .pieza-puzzle-proyecto:hover .img-proyecto {
     -webkit-mask-image: url('../../../images/ChatGPT\ Image\ 11\ may\ 2025\,\ 21_12_57.png');
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
@@ -69,7 +67,13 @@ text-align: center;
     mask-size: 130%;
     mask-repeat: no-repeat;
     mask-position: center;
-} */
+}
+
+
+.pieza-puzzle-proyecto:hover .img-proyecto img {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
 
 .pieza-puzzle-proyecto .contenido {
     display: flex;
@@ -129,6 +133,10 @@ text-align: center;
     margin-top: 0.5rem;
 }
 
+span{
+    color: var(--verde-medio);
+}
+
 .go-back {
     text-align: center; 
 }
@@ -145,8 +153,8 @@ i {
     color: var(--verde-medio);
 }
 
-.arrow{
-    width: 100%;
+.boton-subir{
+    width: 200px;
     text-align: end;
     position: fixed;
     bottom: 30px;
