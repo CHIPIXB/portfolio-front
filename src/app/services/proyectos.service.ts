@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Proyecto } from '../interfaces/proyecto.interface';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -8,12 +9,12 @@ import { Proyecto } from '../interfaces/proyecto.interface';
 })
 export class ProyectosService {
 
-  private apiUrl = 'http://localhost:3000/api/proyectos';
+  private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   getProyectos() {
-    return this.http.get<Proyecto[]>(this.apiUrl);
+    return this.http.get<Proyecto[]>(`${this.apiUrl}/proyectos`);
   }
 
 }

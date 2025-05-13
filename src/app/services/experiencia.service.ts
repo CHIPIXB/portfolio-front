@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Experiencia } from '../interfaces/experiencia.interface';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -8,11 +9,11 @@ import { Experiencia } from '../interfaces/experiencia.interface';
 })
 export class ExperienciaService {
 
-  private url = 'http://localhost:3000/api/experiencia';
+  private apiUrl = environment.apiUrl;
 
   constructor( private http: HttpClient) {}
 
   getExperiencia() {
-    return this.http.get<Experiencia[]>(this.url);
+    return this.http.get<Experiencia[]>(`${this.apiUrl}/experiencia`);
   }
 }
